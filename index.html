@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta tags -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="viewport" content="width=device-width" />
+
+  <!-- Favicon and title -->
+  <link rel="icon" href="path/to/fav.png">
+  <title>FHXL</title>
+
+  <!-- Halfmoon CSS -->
+  <link href="css/halfmoon-variables.min.css" rel="stylesheet" />
+  <!--
+      Or,
+      Use the following (no variables, supports IE11):
+      <link href="css/halfmoon.min.css" rel="stylesheet" />
+    -->
+</head>
+
+<body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true"
+  data-sidebar-shortcut-enabled="true" data-set-preferred-theme-onload="true">
+  <!-- Modals go here -->
+  <!-- Reference: https://www.gethalfmoon.com/docs/modal -->
+
+  <!-- Page wrapper start -->
+  <div class="page-wrapper with-navbar with-sidebar with-navbar-fixed-bottom" data-sidebar-type="overlayed-sm-and-down">
+
+    <!-- Sticky alerts (toasts), empty container -->
+    <!-- Reference: https://www.gethalfmoon.com/docs/sticky-alerts-toasts -->
+    <div class="sticky-alerts"></div>
+
+    <!-- Navbar start -->
+    <nav class="navbar">
+      <button class="btn btn-action mr-5" type="button" onclick="halfmoon.toggleSidebar()">菜单</button>
+      <!-- Reference: https://www.gethalfmoon.com/docs/navbar -->
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- Sidebar overlay -->
+    <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
+
+    <!-- Sidebar start -->
+    <div class="sidebar">
+      <!-- Reference: https://www.gethalfmoon.com/docs/sidebar -->
+    </div>
+    <!-- Sidebar end -->
+
+    <!-- Content wrapper start -->
+    <div class="content-wrapper">
+
+      <!--
+          Add your page's main content here
+          Examples:
+          1. https://www.gethalfmoon.com/docs/content-and-cards/#building-a-page
+          2. https://www.gethalfmoon.com/docs/grid-system/#building-a-dashboard
+        -->
+      <div class="d-flex align-items-center justify-content-center">
+        <h1><strong>FHXL 激活生成工具</strong></h1>
+      </div>
+
+      <div>
+        <div class="card">
+          <h1 class="card-title">基本信息</h1>
+          <label class="required">ID</label>
+          <input type="text" class="form-control" id="ID" onchange="ID_Changed()"
+            placeholder="XboxUserId：xxxxxxxxxxxxxxxx SteamUserId：xxxxxxxxx">
+          <div>
+            <label>XboxUserID</label>
+            <input type="text" class="form-control" id="XboxUserID" placeholder="XboxUserId：xxxxxxxxxxxxxxxx">
+          </div>
+          <div>
+            <label>SteamUserID</label>
+            <input type="text" class="form-control" id="SteamUserID" placeholder="SteamUserId：xxxxxxxxx">
+          </div>
+        </div>
+
+        <div class="card">
+          <h1 class="card-title">Forza Horizon 5</h1>
+          <div class="custom-checkbox">
+            <input type="checkbox" id="FH5 全车车展">
+            <label for="FH5 全车车展">FH5 全车车展</label>
+          </div>
+          <div class="custom-checkbox">
+            <input type="checkbox" id="FH5 碰撞检测">
+            <label for="FH5 碰撞检测">FH5 碰撞检测</label>
+          </div>
+          <div class="custom-checkbox">
+            <input type="checkbox" id="FH5 自动传送">
+            <label for="FH5 自动传送">FH5 自动传送</label>
+          </div>
+          <div class="custom-checkbox">
+            <input type="checkbox" id="FH5 超级抽奖">
+            <label for="FH5 超级抽奖">FH5 超级抽奖</label>
+          </div>
+          <div class="custom-checkbox">
+            <input type="checkbox" id="FH5 技能点数">
+            <label for="FH5 技能点数">FH5 技能点数</label>
+          </div>
+          <div class="custom-checkbox">
+            <input type="checkbox" id="FH5 车辆加速">
+            <label for="FH5 车辆加速">FH5 车辆加速</label>
+          </div>
+          <div class="custom-checkbox">
+            <input type="checkbox" id="FH5 飞天移动">
+            <label for="FH5 飞天移动">FH5 飞天移动</label>
+          </div>
+          <div class="custom-checkbox">
+            <input type="checkbox" id="FH5 设置点数">
+            <label for="FH5 设置点数">FH5 设置点数</label>
+          </div>
+          <div class="custom-checkbox">
+            <input type="checkbox" id="FH5 设置经验">
+            <label for="FH5 设置经验">FH5 设置经验</label>
+          </div>
+
+        </div>
+
+
+        <div class="card text-right">
+          <button class="btn btn-primary btn-lg" onclick="GenerateAll()">生成</button>
+        </div>
+        <div class="card text-center">
+          <h1 class="card-title">结果</h1>
+          <br>
+          <text id="result"></text>
+        </div>
+      </div>
+    </div>
+    <!-- Content wrapper end -->
+
+    <!-- Navbar fixed bottom start -->
+    <nav class="navbar navbar-fixed-bottom">
+      <button class="btn btn-sm" type="button" onclick="halfmoon.toggleDarkMode()">Dark mode</button>
+       
+      <ul class="navbar-nav ml-auto">
+        
+        <span class="navbar-text">
+          &copy; Brand, All rights reserved
+        </span>
+      </ul>
+
+      <!-- Reference: https://www.gethalfmoon.com/docs/navbar#navbar-fixed-bottom -->
+    </nav>
+    <!-- Navbar fixed bottom end -->
+  </div>
+  <!-- Page wrapper end -->
+
+  <!-- Halfmoon JS -->
+  <script src="js/halfmoon.min.js"></script>
+  <script src="js/generate.js"></script>
+</body>
+
+</html>
