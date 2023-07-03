@@ -1,6 +1,6 @@
 /*
 * -----------------------------------------------------------------------------
-* Halfmoon JS (module)
+* Halfmoon JS
 * Version: 1.1.1
 * https://www.gethalfmoon.com
 * Copyright, Halfmoon UI
@@ -507,7 +507,5 @@ function halfmoonOnDOMContentLoaded() {
     }
 }
 
-// Add the halfmoonOnDOMContentLoaded to the main halfmoon object
-// And export the halfmoon object as a module
-halfmoon.onDOMContentLoaded = halfmoonOnDOMContentLoaded;
-module.exports = halfmoon;
+// Call the function when the DOM is loaded
+document.addEventListener("DOMContentLoaded", halfmoonOnDOMContentLoaded);
